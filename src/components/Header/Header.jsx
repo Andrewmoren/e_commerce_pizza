@@ -27,14 +27,14 @@ const Header = () => {
   return (
     <header className="header">
       <Container>
-        <div className="nav__wrapper">
+        <div className="nav__wrapper d-flex align-items-center justify-content-between">
           <div className="logo">
             <img src={logo} alt="logo" />
             <h5>Pizza delivery</h5>
           </div>
           {/* menu */}
           <div className="navigation">
-            <div className="menu">
+            <div className="menu d-flex align-items-center gap-5">
               {nav__link.map((item, index) => (
                 <NavLink to={item.path} key={index}>
                   {item.display}
@@ -44,7 +44,7 @@ const Header = () => {
           </div>
 
           {/* nav */}
-          <div className="nav__right">
+          <div className="nav__right d-flex align-items-center gap-3">
             <span className="cart__icon">
               <i className="ri-shopping-basket-line"></i>
               <span className="cart__badge">2</span>
@@ -54,6 +54,10 @@ const Header = () => {
               <Link to="/login">
                 <i className="ri-user-line"></i>
               </Link>
+            </span>
+
+            <span className="mobile__menu">
+              <i className="ri-menu-line"></i>
             </span>
           </div>
         </div>
