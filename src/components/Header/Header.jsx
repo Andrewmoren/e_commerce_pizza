@@ -32,6 +32,7 @@ const Header = () => {
             <img src={logo} alt="logo" />
             <h5>Pizza delivery</h5>
           </div>
+          {/* menu */}
           <div className="navigation">
             <div className="menu">
               {nav__link.map((item, index) => (
@@ -40,6 +41,20 @@ const Header = () => {
                 </NavLink>
               ))}
             </div>
+          </div>
+
+          {/* nav */}
+          <div className="nav__right">
+            <span className="cart__icon">
+              <i className="ri-shopping-basket-line"></i>
+              <span className="cart__badge">2</span>
+            </span>
+
+            <span className="user">
+              <Link to="/login">
+                <i className="ri-user-line"></i>
+              </Link>
+            </span>
           </div>
         </div>
       </Container>
