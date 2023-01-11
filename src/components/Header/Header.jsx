@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import { Container } from "reactstrap";
 import logo from "../../assets/images/res-logo.png";
@@ -6,26 +6,27 @@ import { NavLink, Link } from "react-router-dom";
 
 import "../../styles/header.css";
 
+const nav__link = [
+  {
+    display: "Home",
+    path: "/home",
+  },
+  {
+    display: "Foods",
+    path: "/foods",
+  },
+  {
+    display: "Cart",
+    path: "/cart",
+  },
+  {
+    display: "Contact",
+    path: "/contact",
+  },
+];
 const Header = () => {
-  const nav__link = [
-    {
-      display: "Home",
-      path: "/home",
-    },
-    {
-      display: "Foods",
-      path: "/foods",
-    },
-    {
-      display: "Cart",
-      path: "/cart",
-    },
-    {
-      display: "Contact",
-      path: "/contact",
-    },
-  ];
-
+  const menuRef = useRef(null);
+  const toogleMenu = () => menuRef.current.classList.toggle("show__menu");
   return (
     <header className="header">
       <Container>
@@ -35,7 +36,7 @@ const Header = () => {
             <h5>Pizza delivery</h5>
           </div>
           {/* menu */}
-          <div className="navigation">
+          <div className="navigation" ref={menuRef} onClick={toogleMenu}>
             <div className="menu d-flex align-items-center gap-5">
               {nav__link.map((item, index) => (
                 <NavLink
@@ -64,7 +65,7 @@ const Header = () => {
               </Link>
             </span>
 
-            <span className="mobile__menu">
+            <span className="mobile__menu" onClick={toogleMenu}>
               <i className="ri-menu-line"></i>
             </span>
           </div>
