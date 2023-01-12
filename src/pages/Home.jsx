@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import Helmet from "../components/Helmet/Helmet";
 import { Container, Row, Col } from "reactstrap";
 
@@ -16,13 +16,23 @@ const Home = () => {
             <Col lg="6" md="6">
               <div className="hero__content">
                 <h5 className="mb-3">Easy way to make an order</h5>
-                <h1 className="mb-4">
-                  <span>HUNGRY?</span> just wait food <span>at your door</span>
+                <h1 className="mb-4 hero__title">
+                  <span>HUNGRY?</span> just wait
+                  <br /> food at <span>your door</span>
                 </h1>
                 <p>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Ipsam, delectus sed! Cum vero vel?
                 </p>
+
+                <div className="hero__btns d-flex align-items-center gap-5 mt-4">
+                  <button className="order__btn d-flex align-items-center justify-content-between">
+                    Order now<i className="ri-arrow-right-s-line"></i>
+                  </button>
+                  <button className="all__foods-btn">
+                    <Link to="/foods">See all foods</Link>
+                  </button>
+                </div>
               </div>
             </Col>
 
