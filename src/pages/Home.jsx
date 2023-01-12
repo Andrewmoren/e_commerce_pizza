@@ -5,6 +5,8 @@ import { Container, Row, Col } from "reactstrap";
 
 import heroImg from "../assets/images/hero.png";
 
+import "../styles/hero-section.css";
+
 const Home = () => {
   return (
     <Helmet title="Home">
@@ -12,7 +14,16 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="6" md="6">
-              <div className="hero__content"></div>
+              <div className="hero__content">
+                <h5 className="mb-3">Easy way to make an order</h5>
+                <h1 className="mb-4">
+                  <span>HUNGRY?</span> just wait food <span>at your door</span>
+                </h1>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Ipsam, delectus sed! Cum vero vel?
+                </p>
+              </div>
             </Col>
 
             <Col lg="6" md="6">
