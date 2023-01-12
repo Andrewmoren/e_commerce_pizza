@@ -33,6 +33,22 @@ const Home = () => {
                     <Link to="/foods">See all foods</Link>
                   </button>
                 </div>
+
+                <div className=" hero__service  d-flex align-items-center gap-5 mt-5">
+                  <p className="d-flex align-items-center gap-2">
+                    <span className="shipping__icon">
+                      <i className="ri-car-line"></i>
+                    </span>
+                    No shipping charge
+                  </p>
+
+                  <p className="d-flex align-items-center gap-2">
+                    <span className="shipping__icon">
+                      <i className="ri-shield-check-line"></i>
+                    </span>
+                    100% secure checkout
+                  </p>
+                </div>
               </div>
             </Col>
 
