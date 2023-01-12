@@ -23,9 +23,24 @@
     padding: 7px 20px;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: 500;
 }
 
 .order__btn {
     background: #df2020;
-    ;
+    color: #fff;
+    transition: .3s;
+}
+
+.order__btn:hover {
+    background: #212245;
+}
+
+.all__foods-btn {
+    background: transparent;
+    border: 1px solid #df2020 !important;
+}
+
+.all__foods-btn a {
+    color: #df2020
 }
