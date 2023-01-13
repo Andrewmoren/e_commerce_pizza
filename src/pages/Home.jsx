@@ -12,6 +12,12 @@ import featureImg01 from "../assets/images/service-01.png";
 import featureImg02 from "../assets/images/service-02.png";
 import featureImg03 from "../assets/images/service-03.png";
 
+import products from "../assets/fake-data/products.js";
+
+import foodCategoryImg01 from "../assets/images/hamburger.png";
+import foodCategoryImg02 from "../assets/images/pizza.png";
+import foodCategoryImg03 from "../assets/images/bread.png";
+
 import "../styles/home.css";
 
 const featureData = [
@@ -121,6 +127,36 @@ const Home = () => {
                 </div>
               </Col>
             ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12" className="text-center">
+              <h2>Popular Foods</h2>
+            </Col>
+
+            <Col lg="12">
+              <div className="food__category d-flex align-items-center justify-content-center gap-4">
+                <button className="all__btn foodBtnActive">All</button>
+                <button className="d-flex align-items-center gap-2">
+                  <img src={foodCategoryImg01} alt="foods__img01" />
+                  Burger
+                </button>
+
+                <button className="d-flex align-items-center gap-2">
+                  <img src={foodCategoryImg02} alt="foods__img02" />
+                  Pizza
+                </button>
+
+                <button className="d-flex align-items-center gap-2">
+                  <img src={foodCategoryImg03} alt="foods__img03" />
+                  Bread
+                </button>
+              </div>
+            </Col>
           </Row>
         </Container>
       </section>
