@@ -18,6 +18,8 @@ import foodCategoryImg01 from "../assets/images/hamburger.png";
 import foodCategoryImg02 from "../assets/images/pizza.png";
 import foodCategoryImg03 from "../assets/images/bread.png";
 
+import ProductCard from "../components/UI/product-card/ProductCard";
+
 import "../styles/home.css";
 
 const featureData = [
@@ -157,6 +159,12 @@ const Home = () => {
                 </button>
               </div>
             </Col>
+
+            {products.map((item) => (
+              <Col lg="3" mb="4" key={item.id}>
+                <ProductCard item={item} />
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
