@@ -37,3 +37,12 @@
     border-radius: 5px;
     font-size: 0.9rem;
 }
+
+.choose__us-title {
+    font-weight: 600;
+}
+
+.choose__us-title i {
+    font-weight: 500 !important;
+    color: #df2020;
+}
