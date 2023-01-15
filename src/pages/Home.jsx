@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Helmet from "../components/Helmet/Helmet";
 import { Container, Row, Col } from "reactstrap";
@@ -41,6 +41,35 @@ const featureData = [
 ];
 
 const Home = () => {
+  const [category, setCategory] = useState("ALL");
+  const [allProducts, setAllProducts] = useState(products);
+
+  useEffect(() => {
+    if (category === "ALL") {
+      setAllProducts(products);
+    }
+
+    if (category === "BURGER") {
+      const filterredProducts = products.filter(
+        (item) => item.category === "Burger"
+      );
+      setAllProducts(filterredProducts);
+    }
+
+    if (category === "PIZZA") {
+      const filterredProducts = products.filter(
+        (item) => item.category === "Pizza"
+      );
+      setAllProducts(filterredProducts);
+    }
+
+    if (category === "BREAD") {
+      const filterredProducts = products.filter(
+        (item) => item.category === "Bread"
+      );
+      setAllProducts(filterredProducts);
+    }
+  }, [category]);
   return (
     <Helmet title="Home">
       <section>
@@ -142,25 +171,47 @@ const Home = () => {
 
             <Col lg="12">
               <div className="food__category d-flex align-items-center justify-content-center gap-4">
-                <button className="all__btn foodBtnActive">All</button>
-                <button className="d-flex align-items-center gap-2">
+                <button
+                  className={`all__btn ${
+                    category === "ALL" ? "foodBtnActive" : ""
+                  }`}
+                  onClick={() => setCategory("ALL")}
+                >
+                  All
+                </button>
+                <button
+                  className={`d-flex align-items-center gap-2 ${
+                    category === "BURGER" ? "foodBtnActive" : ""
+                  }`}
+                  onClick={() => setCategory("BURGER")}
+                >
                   <img src={foodCategoryImg01} alt="foods__img01" />
                   Burger
                 </button>
 
-                <button className="d-flex align-items-center gap-2">
+                <button
+                  className={`d-flex align-items-center gap-2 ${
+                    category === "PIZZA" ? "foodBtnActive" : ""
+                  }`}
+                  onClick={() => setCategory("PIZZA")}
+                >
                   <img src={foodCategoryImg02} alt="foods__img02" />
                   Pizza
                 </button>
 
-                <button className="d-flex align-items-center gap-2">
+                <button
+                  className={`d-flex align-items-center gap-2 ${
+                    category === "BREAD" ? "foodBtnActive" : ""
+                  }`}
+                  onClick={() => setCategory("BREAD")}
+                >
                   <img src={foodCategoryImg03} alt="foods__img03" />
                   Bread
                 </button>
               </div>
             </Col>
 
-            {products.map((item) => (
+            {allProducts.map((item) => (
               <Col lg="3" mb="4" key={item.id} className="mt-5">
                 <ProductCard item={item} />
               </Col>
