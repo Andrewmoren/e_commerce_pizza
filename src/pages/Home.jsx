@@ -19,8 +19,10 @@ import foodCategoryImg02 from "../assets/images/pizza.png";
 import foodCategoryImg03 from "../assets/images/bread.png";
 
 import ProductCard from "../components/UI/product-card/ProductCard";
-
+import networking from "../assets/images/network.png";
 import whyImg from "../assets/images/location.png";
+
+import TestiSlider from "../components/UI/slider/TestiSlider.jsx";
 
 import "../styles/home.css";
 
@@ -295,6 +297,31 @@ const Home = () => {
                 <ProductCard item={item} />
               </Col>
             ))}
+          </Row>
+        </Container>
+      </section>
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="6" md="6">
+              <div className="testimonial">
+                <h5 className="testimonial__subtitle mb-4">Testimonial</h5>
+                <h2 className="testimonial__title">
+                  What our <span>customers</span> are saying
+                </h2>
+                <p className="testimonial__desc">
+                  Lorem ipsum dolor sit amet consectetur adipisicing eli, amet
+                  consectetur adipisicing eli consectetur adipisicing eli
+                </p>
+
+                <TestiSlider />
+              </div>
+            </Col>
+
+            <Col lg="6" md="6">
+              <img src={networking} alt="networking_img" className="w-100" />
+            </Col>
           </Row>
         </Container>
       </section>
