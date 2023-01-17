@@ -49,14 +49,14 @@
 
 .cart__badge {
     position: absolute;
-    top: 30px;
-    right: -10px;
+    top: 27px;
+    right: -14px;
     background: #df2020;
     color: #fff;
-    width: 15px;
-    height: 15px;
+    width: 19px;
+    height: 19px;
     border-radius: 50%;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 500;
     display: flex;
     align-items: center;
