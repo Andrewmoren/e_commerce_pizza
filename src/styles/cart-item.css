@@ -33,6 +33,7 @@
 .delete__btn {
     font-size: 1.1rem;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .cart-item {
