@@ -19,7 +19,7 @@ const Carts = () => {
           <CartItem />
         </div>
 
-        <div className="cart__bottom">
+        <div className="cart__bottom d-flex align-items-center justify-content-between">
           <h6>
             Subtotal amount: <span>$123</span>
           </h6>
