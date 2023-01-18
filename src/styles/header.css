@@ -45,6 +45,7 @@
 
 .cart__icon {
     position: relative;
+    cursor: pointer;
 }
 
 .cart__badge {
