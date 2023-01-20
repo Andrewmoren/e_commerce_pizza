@@ -7,6 +7,8 @@ import { Container, Row, Col } from "reactstrap";
 import products from "../assets/fake-data/products";
 import ProductCard from "../components/UI/product-card/ProductCard";
 
+import "../styles/all-foods.css";
+
 const AllFoods = () => {
   return (
     <Helmet title="All Foods">
@@ -16,7 +18,7 @@ const AllFoods = () => {
         <Container>
           <Row>
             <Col lg="6" md="6" sm="6">
-              <div className="search__widget">
+              <div className="search__widget d-flex align-items-center justify-content-between w-50">
                 <input type="text" placeholder="Search...." />
                 <span>
                   <i className="ri-search-line"></i>
@@ -24,8 +26,8 @@ const AllFoods = () => {
               </div>
             </Col>
             <Col lg="6" md="6" sm="6" className="mb-5">
-              <div className="sorting__widget">
-                <select>
+              <div className="sorting__widget text-end">
+                <select className="w-50">
                   <option>Default</option>
                   <option value="ascending">Alphabetically, A-Z</option>
                   <option value="descending">Alphabetically, Z-A</option>
