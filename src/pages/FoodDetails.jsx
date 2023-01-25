@@ -83,54 +83,66 @@ const FoodDetails = () => {
 
             <Col lg="12">
               <div className="tabs d-flex align-items-center gap-3 py-2">
-                <h6 className="tab__active">Description</h6>
-                <h6>Review</h6>
+                <h6
+                  className={`${tab === "desc" ? "tab__active" : ""}`}
+                  onClick={() => setTab("desc")}
+                >
+                  Description
+                </h6>
+                <h6
+                  className={`${tab === "rev" ? "tab__active" : ""}`}
+                  onClick={() => setTab("rev")}
+                >
+                  Review
+                </h6>
               </div>
 
-              <div className="tab__content">
-                <p>{desc}</p>
-              </div>
-
-              <div className="tab__form mb-3">
-                <div className="review">
-                  <p className="user__name mb-0">Jhon Travolta</p>
-                  <p className="user__email">example@gmail.com</p>
-                  <p className="feedback__text">great product</p>
+              {tab === "desc" ? (
+                <div className="tab__content">
+                  <p>{desc}</p>
                 </div>
-
-                <div className="review">
-                  <p className="user__name mb-0">Jhon Travolta</p>
-                  <p className="user__email">example@gmail.com</p>
-                  <p className="feedback__text">great product</p>
-                </div>
-
-                <div className="review">
-                  <p className="user__name mb-0">Jhon Travolta</p>
-                  <p className="user__email">example@gmail.com</p>
-                  <p className="feedback__text">great product</p>
-                </div>
-                <form className="form">
-                  <div className="form__group">
-                    <input type="text" placeholder="Enter your name" />
+              ) : (
+                <div className="tab__form mb-3">
+                  <div className="review pt-5">
+                    <p className="user__name mb-0">Jhon Travolta</p>
+                    <p className="user__email">example@gmail.com</p>
+                    <p className="feedback__text">great product</p>
                   </div>
 
-                  <div className="form__group">
-                    <input type="text" placeholder="Enter your name" />
+                  <div className="review">
+                    <p className="user__name mb-0">Jhon Travolta</p>
+                    <p className="user__email">example@gmail.com</p>
+                    <p className="feedback__text">great product</p>
                   </div>
 
-                  <div className="form__group">
-                    <textarea
-                      rows={8}
-                      type="text"
-                      placeholder="Enter your name"
-                    />
+                  <div className="review">
+                    <p className="user__name mb-0">Jhon Travolta</p>
+                    <p className="user__email">example@gmail.com</p>
+                    <p className="feedback__text">great product</p>
                   </div>
+                  <form className="form">
+                    <div className="form__group">
+                      <input type="text" placeholder="Enter your name" />
+                    </div>
 
-                  <button type="submit" className="addToCart__btn">
-                    Submit
-                  </button>
-                </form>
-              </div>
+                    <div className="form__group">
+                      <input type="text" placeholder="Enter your name" />
+                    </div>
+
+                    <div className="form__group">
+                      <textarea
+                        rows={8}
+                        type="text"
+                        placeholder="Enter your name"
+                      />
+                    </div>
+
+                    <button type="submit" className="addToCart__btn">
+                      Submit
+                    </button>
+                  </form>
+                </div>
+              )}
             </Col>
           </Row>
         </Container>
