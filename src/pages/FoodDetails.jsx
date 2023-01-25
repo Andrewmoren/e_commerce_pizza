@@ -64,6 +64,34 @@ const FoodDetails = () => {
                 quaerat culpa! Assumenda minima consequuntur nesciunt? Quae.
               </p>
             </div>
+
+            <div className="tab__form">
+              <div className="review">
+                <p className="user__name">Jhon Travolta</p>
+                <p className="review__text">great product</p>
+              </div>
+              <form className="form">
+                <div className="form__group">
+                  <input type="text" placeholder="Enter your name" />
+                </div>
+
+                <div className="form__group">
+                  <input type="text" placeholder="Enter your name" />
+                </div>
+
+                <div className="form__group">
+                  <textarea
+                    rows={8}
+                    type="text"
+                    placeholder="Enter your name"
+                  />
+                </div>
+
+                <button type="submit" className="addToCart__btn">
+                  Submit
+                </button>
+              </form>
+            </div>
           </Col>
         </Row>
       </Container>
