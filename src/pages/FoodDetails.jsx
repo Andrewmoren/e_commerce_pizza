@@ -6,7 +6,9 @@ import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 
-import productImg from "../assets/images/product_01.1.jpg";
+// import productImg from "../assets/images/product_01.1.jpg";
+
+import ProductCard from "../components/UI/product-card/ProductCard";
 
 import "../styles/product-details.css";
 
@@ -18,6 +20,8 @@ const FoodDetails = () => {
   const product = products.find((prod) => prod.id === id);
   const [previewImg, setPreviewImg] = useState(product.image01);
   const { title, price, category, desc } = product;
+
+  const relatedProduct = products.filter((item) => category === item.category);
 
   return (
     <Helmet title="Product-details">
@@ -143,6 +147,10 @@ const FoodDetails = () => {
                   </form>
                 </div>
               )}
+            </Col>
+
+            <Col lg="12" className="mb-5">
+              <h2>You might also like</h2>
             </Col>
           </Row>
         </Container>
