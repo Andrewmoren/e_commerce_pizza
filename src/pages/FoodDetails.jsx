@@ -152,6 +152,12 @@ const FoodDetails = () => {
             <Col lg="12" className="mb-5">
               <h2>You might also like</h2>
             </Col>
+
+            {relatedProduct.map((item) => (
+              <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
+                <ProductCard item={item} />
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
