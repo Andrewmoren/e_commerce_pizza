@@ -23,6 +23,14 @@ const FoodDetails = () => {
 
   const relatedProduct = products.filter((item) => category === item.category);
 
+  useEffect(() => {
+    setPreviewImg(product.image01);
+  }, [product]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [product]);
+
   return (
     <Helmet title="Product-details">
       <CommonSection title={title} />
@@ -149,12 +157,12 @@ const FoodDetails = () => {
               )}
             </Col>
 
-            <Col lg="12" className="mb-5">
-              <h2>You might also like</h2>
+            <Col lg="12" className="mb-5 mt-4">
+              <h2 className="related__Product-title">You might also like</h2>
             </Col>
 
             {relatedProduct.map((item) => (
-              <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
+              <Col lg="3" md="4" sm="6" xs="6" className="mb-4" key={item.id}>
                 <ProductCard item={item} />
               </Col>
             ))}
