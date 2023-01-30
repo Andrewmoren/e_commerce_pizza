@@ -17,13 +17,15 @@ import "../styles/product-details.css";
 
 const FoodDetails = () => {
   const [tab, setTab] = useState("desc");
-
+  const [enteredName, setEnteredName] = useState("");
+  const [enteredEmail, setEnteredEmail] = useState("");
+  const [reviewMsg, setReviewMsg] = useState("");
   const { id } = useParams();
   const dispatch = useDispatch();
 
   const product = products.find((prod) => prod.id === id);
   const [previewImg, setPreviewImg] = useState(product.image01);
-  const { title, price, category, desc } = product;
+  const { title, price, category, desc, image01 } = product;
 
   const relatedProduct = products.filter((item) => category === item.category);
 
@@ -36,6 +38,10 @@ const FoodDetails = () => {
         image01,
       })
     );
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
   };
 
   useEffect(() => {
@@ -104,7 +110,9 @@ const FoodDetails = () => {
                   Category: <span>{category}</span>
                 </p>
 
-                <button className="addToCart__btn">Add to Cart</button>
+                <button onClick={addItem} className="addToCart__btn">
+                  Add to Cart
+                </button>
               </div>
             </Col>
 
@@ -147,20 +155,32 @@ const FoodDetails = () => {
                     <p className="user__email">example@gmail.com</p>
                     <p className="feedback__text">great product</p>
                   </div>
-                  <form className="form">
+                  <form className="form" onSubmit={submitHandler}>
                     <div className="form__group">
-                      <input type="text" placeholder="Enter your name" />
+                      <input
+                        onChange={(e) => setEnteredName(e.target.value)}
+                        type="text"
+                        placeholder="Enter your name"
+                        required
+                      />
                     </div>
 
                     <div className="form__group">
-                      <input type="text" placeholder="Enter your name" />
+                      <input
+                        onChange={(e) => setEnteredEmail(e.target.value)}
+                        type="text"
+                        placeholder="Enter your email"
+                        required
+                      />
                     </div>
 
                     <div className="form__group">
                       <textarea
                         rows={8}
                         type="text"
-                        placeholder="Enter your name"
+                        placeholder="Write your review"
+                        onChange={(e) => setReviewMsg(e.target.value)}
+                        required
                       />
                     </div>
 
