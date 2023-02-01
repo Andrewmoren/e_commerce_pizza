@@ -101,7 +101,7 @@
 }
 
 
-@media only screen and(max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .product__title {
         font-size: 1.4rem;
     }
@@ -151,6 +151,15 @@
     .related__Product-title {
         font-size: 1.2rem;
     }
+}
 
+@media only screen and (max-width: 576px) {
+    .product__images {
+        display: flex;
+        flex-direction: row;
+    }
 
+    .product__main-img {
+        margin-bottom: 20px;
+    }
 }
