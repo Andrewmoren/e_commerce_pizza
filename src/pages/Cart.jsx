@@ -3,13 +3,16 @@ import React from "react";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
+import { cartActions } from "../store/shopping-cart/cartSlice";
+import { Link } from "react-router-dom";
 
 import "../styles/cart-page.css";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
   return (
     <Helmet title="Cart">
       <CommonSection title="Your Cart" />
@@ -37,6 +40,21 @@ const Cart = () => {
                   </tbody>
                 </table>
               )}
+              <div className="mt-4">
+                <h6>
+                  Subtotal: $
+                  <span className="cart__subtotal">{totalAmount}</span>
+                  <p>Taxes and shipping will calculate at checkout</p>
+                  <div className="cart__page-btn">
+                    <button className="addToCart__btn me-4">
+                      <Link to="/foods">Continue shopping</Link>
+                    </button>
+                    <button className="addToCart__btn">
+                      <Link to="/checkout">Procees to checkout</Link>
+                    </button>
+                  </div>
+                </h6>
+              </div>
             </Col>
           </Row>
         </Container>
@@ -46,15 +64,22 @@ const Cart = () => {
 };
 
 const Tr = (props) => {
-  const { image01, title, price, quantitty } = props.item;
+  const { id, image01, title, price, quantity } = props.item;
+  const dispatch = useDispatch();
+
+  const deleteItem = () => {
+    dispatch(cartActions.deleteItem(id));
+  };
   return (
     <tr>
-      <td className="text-center">{image01}</td>
+      <td className="text-center cart__img-box">
+        <img src={image01} alt="image01" />
+      </td>
       <td className="text-center">{title}</td>
       <td className="text-center">${price}</td>
-      <td className="text-center">{quantitty}px</td>
-      <td className="text-center">
-        <i className="ri-delete-bin-line"></i>
+      <td className="text-center">{quantity}px</td>
+      <td className="text-center cart__item-delete">
+        <i className="ri-delete-bin-line" onClick={deleteItem}></i>
       </td>
     </tr>
   );
