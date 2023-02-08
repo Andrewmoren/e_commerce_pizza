@@ -6,8 +6,26 @@ import Helmet from "../components/Helmet/Helmet";
 
 const Checkout = () => {
   return (
-    <Helmet>
+    <Helmet title="Checkout">
       <CommonSection title="Checkout" />
+      <section>
+        <Container>
+          <Row>
+            <Col lg="8" md="6">
+              <h6 className="mb-4">Shipping Address</h6>
+              <form className="checkout__form">
+                <div className="form__group">
+                  <input type="text" placeholder="Enter your name" />
+                </div>
+                <div className="form__group">
+                  <input type="email" placeholder="Enter your email" />
+                </div>
+              </form>
+            </Col>
+            <Col lg="4" md="6"></Col>
+          </Row>
+        </Container>
+      </section>
     </Helmet>
   );
 };
