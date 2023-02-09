@@ -37,7 +37,7 @@ const Checkout = () => {
                   <input type="number" placeholder="Postal code" />
                 </div>
               </form>
-              <button className="addToCart__btn">Payment</button>
+              <button className="addToCart__btn">Payments</button>
             </Col>
             <Col lg="4" md="6">
               <div>
