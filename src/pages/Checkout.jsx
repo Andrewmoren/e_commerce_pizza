@@ -20,6 +20,9 @@ const Checkout = () => {
                 <div className="form__group">
                   <input type="email" placeholder="Enter your email" />
                 </div>
+                <div className="form__group">
+                  <input type="text" placeholder="Country" />
+                </div>
               </form>
             </Col>
             <Col lg="4" md="6"></Col>
