@@ -21,6 +21,9 @@ const Checkout = () => {
                   <input type="email" placeholder="Enter your email" />
                 </div>
                 <div className="form__group">
+                  <input type="number" placeholder="Phone number" />
+                </div>
+                <div className="form__group">
                   <input type="text" placeholder="Country" />
                 </div>
                 <div className="form__group">
