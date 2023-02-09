@@ -5,6 +5,10 @@ import CommonSection from "../components/UI/common-section/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
 
 const Checkout = () => {
+  const cartTotalAmout = useSelector((state) => state.cart.totalAmount);
+  const shippingCost = 30;
+
+  const totalAmount = cartTotalAmout + Number(shippingCost);
   return (
     <Helmet title="Checkout">
       <CommonSection title="Checkout" />
@@ -35,7 +39,21 @@ const Checkout = () => {
               </form>
               <button className="addToCart__btn">Payment</button>
             </Col>
-            <Col lg="4" md="6"></Col>
+            <Col lg="4" md="6">
+              <div>
+                <h6>
+                  Subtotal: $<span>{cartTotalAmout}</span>
+                </h6>
+                <h6>
+                  Shipping: $<span>{shippingCost}</span>
+                </h6>
+                <div>
+                  <h5>
+                    Total: <span>${totalAmount}</span>
+                  </h5>
+                </div>
+              </div>
+            </Col>
           </Row>
         </Container>
       </section>
