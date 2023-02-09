@@ -19,7 +19,7 @@ const Checkout = () => {
               <h6 className="mb-4">Shipping Address</h6>
               <form className="checkout__form">
                 <div className="form__group">
-                  <input type="text" placeholder="Enter your name" />
+                  <input type="text" placeholder="Enter you name" />
                 </div>
                 <div className="form__group">
                   <input type="email" placeholder="Enter your email" />
