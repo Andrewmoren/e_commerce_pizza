@@ -16,7 +16,7 @@ const Checkout = () => {
         <Container>
           <Row>
             <Col lg="8" md="6">
-              <h6 className="mb-4">Shipping Address</h6>
+              <h6 className="mb-4">Shipping Addres</h6>
               <form className="checkout__form">
                 <div className="form__group">
                   <input type="text" placeholder="Enter you name" />
