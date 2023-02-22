@@ -23,7 +23,7 @@ const Login = () => {
                 <div className="addToCart__btn">Login</div>
               </form>
               <Link to="/register">
-                Alredy have an account? Create an account
+                Alredy have an account? Create an account!
               </Link>
             </Col>
           </Row>
