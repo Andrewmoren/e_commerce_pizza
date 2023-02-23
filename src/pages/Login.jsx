@@ -22,7 +22,7 @@ const Login = () => {
               <form action="" className="form mb-5" onSubmit={submitHandler}>
                 <div className="form__group">
                   <input
-                    type="text"
+                    type="email"
                     placeholder="Email"
                     required
                     ref={loginNameRef}
