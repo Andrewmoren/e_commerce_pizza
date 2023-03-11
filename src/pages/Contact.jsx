@@ -1,7 +1,8 @@
 import React from "react";
-import { Container } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
+import { Container, Row, Col } from "reactstrap";
+import "../styles/contact.css";
 
 const Contact = () => {
   return (
@@ -10,7 +11,9 @@ const Contact = () => {
         <section>
           <Container>
             <Row>
-              <Col lg="3" md="3"></Col>
+              <Col lg="3" md="3">
+                111111
+              </Col>
             </Row>
           </Container>
         </section>
