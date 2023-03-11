@@ -1,13 +1,20 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase.config";
 
 const Register = () => {
-  const signUpNameRef = useRef();
-  const signUpPasswordRef = useRef();
-  const signEmailRef = useRef();
+  // const signUpNameRef = useRef();
+  // const signUpPasswordRef = useRef();
+  // const signEmailRef = useRef();
+
+  const [username, setUSerName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [file, setFile] = useState(null);
 
   const submitHandler = (e) => {
     e.preventDefault();
